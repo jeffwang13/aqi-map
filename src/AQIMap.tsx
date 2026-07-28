@@ -3,6 +3,7 @@ import { MapContainer, TileLayer, Marker, Popup, useMap } from "react-leaflet";
 import L from "leaflet";
 import type { CityAQI } from "./types";
 import { getAQIColor, getAQILabel } from "./api";
+import { formatTime } from "./utils";
 import "leaflet/dist/leaflet.css";
 
 interface AQIMapProps {
@@ -138,6 +139,9 @@ export default function AQIMap({
               </div>
               <p className="mt-2 text-xs text-gray-400">
                 Source: {city.data.source}
+              </p>
+              <p className="mt-1 text-xs text-gray-400">
+                Updated: {formatTime(city.data.timestamp)}
               </p>
             </div>
           </Popup>
