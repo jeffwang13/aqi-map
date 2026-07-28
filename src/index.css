@@ -1,0 +1,50 @@
+@import "tailwindcss";
+
+:root {
+  --text: #1f2937;
+  --bg: #f8fafc;
+  --panel: #ffffff;
+  --border: #e2e8f0;
+
+  --aqi-good: #22c55e;
+  --aqi-moderate: #eab308;
+  --aqi-sensitive: #f97316;
+  --aqi-unhealthy: #ef4444;
+  --aqi-very-unhealthy: #a855f7;
+  --aqi-hazardous: #7f1d1d;
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --text: #f8fafc;
+    --bg: #0f172a;
+    --panel: #1e293b;
+    --border: #334155;
+  }
+}
+
+html, body, #root {
+  height: 100%;
+  margin: 0;
+  overflow: hidden;
+}
+
+#root {
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+  color: var(--text);
+  background: var(--bg);
+}
+
+.leaflet-container {
+  height: 100% !important;
+  width: 100% !important;
+}
+
+.aqi-marker {
+  transition: transform 0.2s ease;
+}
+
+.aqi-marker:hover {
+  transform: scale(1.15);
+  z-index: 1000 !important;
+}
