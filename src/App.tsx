@@ -115,8 +115,14 @@ export default function App() {
       <div className="relative flex min-h-0 flex-1 flex-col overflow-hidden">
         <main className="relative min-h-0 flex-1 overflow-hidden">
           {loading && cities.length === 0 ? (
-            <div className="flex h-full items-center justify-center">
-              <div className="h-10 w-10 animate-spin rounded-full border-4 border-slate-300 border-t-sky-600" />
+            <div className="flex h-full flex-col items-center justify-center gap-4 bg-slate-50 text-slate-900 dark:bg-slate-950 dark:text-slate-100">
+              <div className="h-12 w-12 animate-spin rounded-full border-4 border-slate-300 border-t-sky-600" />
+              <div className="text-center">
+                <h2 className="text-lg font-semibold">Global Air Quality Map</h2>
+                <p className="text-sm text-slate-500 dark:text-slate-400">
+                  Fetching AQI data for {majorCities.length} cities...
+                </p>
+              </div>
             </div>
           ) : (
             <AQIMap
