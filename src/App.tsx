@@ -121,8 +121,8 @@ export default function App() {
         </div>
       </header>
 
-      <div className="relative flex min-h-0 flex-1 overflow-hidden">
-        <main className="relative h-full min-h-0 w-full flex-1 overflow-hidden">
+      <div className="relative flex min-h-0 flex-1 flex-col overflow-hidden">
+        <main className="relative min-h-0 flex-1 overflow-hidden">
           {loading && cities.length === 0 ? (
             <div className="flex h-full items-center justify-center">
               <div className="h-10 w-10 animate-spin rounded-full border-4 border-slate-300 border-t-sky-600" />
@@ -157,8 +157,8 @@ export default function App() {
         </main>
 
         <aside
-          className={`absolute right-0 top-0 z-[1000] h-full w-80 transform border-l border-slate-200 bg-white shadow-xl transition-transform duration-300 dark:border-slate-800 dark:bg-slate-900 sm:relative sm:w-80 ${
-            listOpen ? "translate-x-0" : "translate-x-full sm:translate-x-0"
+          className={`absolute right-0 top-0 bottom-0 z-[1000] w-80 transform border-l border-slate-200 bg-white shadow-xl transition-transform duration-300 dark:border-slate-800 dark:bg-slate-900 ${
+            listOpen ? "translate-x-0" : "translate-x-full"
           }`}
         >
           <div className="flex h-full flex-col p-4">

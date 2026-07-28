@@ -36,8 +36,11 @@ html, body, #root {
 }
 
 .leaflet-container {
-  height: 100% !important;
-  width: 100% !important;
+  position: fixed !important;
+  inset: 0 !important;
+  width: 100vw !important;
+  height: 100vh !important;
+  z-index: 0 !important;
 }
 
 .aqi-marker {
